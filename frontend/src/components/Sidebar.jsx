@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion as Motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Folder, File, FileCode } from 'lucide-react';
 import { useState } from 'react';
 import clsx from 'clsx';
@@ -31,12 +31,12 @@ const TreeItem = ({ item, onSelect, activePath, depth = 0 }) => {
       >
         <span className="mr-2 opacity-70 flex-shrink-0">
           {!isFile ? (
-            <motion.div
+            <Motion.div
               animate={{ rotate: isOpen ? 90 : 0 }}
               transition={{ duration: 0.1 }}
             >
               <ChevronRight size={14} />
-            </motion.div>
+            </Motion.div>
           ) : (
              <div className="w-[14px]" /> 
           )}
@@ -51,7 +51,7 @@ const TreeItem = ({ item, onSelect, activePath, depth = 0 }) => {
 
       <AnimatePresence initial={false}>
         {isOpen && !isFile && item.children && (
-          <motion.div
+          <Motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -67,7 +67,7 @@ const TreeItem = ({ item, onSelect, activePath, depth = 0 }) => {
                 depth={depth + 1} 
               />
             ))}
-          </motion.div>
+          </Motion.div>
         )}
       </AnimatePresence>
     </div>

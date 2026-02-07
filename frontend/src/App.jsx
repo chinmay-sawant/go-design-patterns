@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { Sidebar } from './components/Sidebar';
 import { CodeViewer } from './components/CodeViewer';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { Code, BookOpen, GitBranch, Github } from 'lucide-react';
 import data from './data.json'; 
 
@@ -11,8 +11,6 @@ function App() {
   const [activeFile, setActiveFile] = useState(null);
   const [activePath, setActivePath] = useState(null);
   
-  // Flatten tree for counting or other logic if needed, but data.json is recursive
-  const patternCount = data.reduce((acc, cat) => acc + (cat.children?.length || 0), 0);
 
   const startResizing = useCallback(() => {
     setIsResizing(true);
@@ -118,7 +116,7 @@ function App() {
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center h-full text-text-secondary">
-            <motion.div 
+            <Motion.div 
               initial={{ opacity: 0, scale: 0.95 }} 
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
@@ -130,7 +128,7 @@ function App() {
                 Explore idiomatic Go implementations of classic design patterns. 
                 Select a pattern from the sidebar to begin.
               </p>
-            </motion.div>
+            </Motion.div>
           </div>
         )}
       </div>
