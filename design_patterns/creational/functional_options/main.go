@@ -11,6 +11,11 @@ import "fmt"
 // "Add Cheese please!"
 // "Add Pepperoni please!"
 // You don't HAVE to add them, but you CAN if you want to.
+//
+// Real World Scenario:
+// Configuring a Server (like an HTTP server). You start with a default server configuration.
+// Then, you can use options like WithPort(8080), WithTimeout(30s), or WithLogger(myLogger)
+// to customize it. This is cleaner than having a constructor with 10 different arguments.
 
 // Pizza is what we are making.
 type Pizza struct {
@@ -28,9 +33,9 @@ type PizzaOption func(*Pizza)
 func NewPizza(opts ...PizzaOption) *Pizza {
 	// Start with the default "Basic" pizza
 	p := &Pizza{
-		Dough:  "Regular",
-		Sauce:  "Tomato",
-		Cheese: false,    // Default is no extra cheese
+		Dough:    "Regular",
+		Sauce:    "Tomato",
+		Cheese:   false, // Default is no extra cheese
 		Toppings: []string{},
 	}
 

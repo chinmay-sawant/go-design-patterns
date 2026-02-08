@@ -12,6 +12,13 @@ import "fmt"
 // 3. Car (Super fast but needs gas)
 // The "Strategy" is just "How do we get there?".
 // You can pick a different strategy depending on if you are in a rush!
+//
+// Real World Scenario:
+// Saving a file. You might have a "SaveStrategy".
+// - SaveToLocalDisk (for offline use)
+// - SaveToS3 (cloud storage)
+// - SaveToDatabase (binary data)
+// The application just says "Save(file)", and the specific Strategy handles WHERE it goes.
 
 // TravelStrategy is the interface for our travel method.
 type TravelStrategy interface {

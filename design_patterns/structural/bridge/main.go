@@ -10,6 +10,11 @@ import "fmt"
 // You can have different kinds of Remotes (Basic, Fancy) and different kinds of TVs (Sony, Samsung).
 // The Bridge pattern separates the "Remote" from the "TV" so you can mix and match them!
 // A Fancy Remote can work with a Sony TV OR a Samsung TV.
+//
+// Real World Scenario:
+// Universal Remote Controls or Cross-Platform GUI toolkits.
+// You have the "Window" abstraction (Window, Dialog, Panel) and the "OS Implementation" (Windows, Linux, Mac).
+// The Bridge allows you to develop the Window logic independently of the OS rendering logic.
 
 // -- Implementation (The Device/TV) --
 type Device interface {

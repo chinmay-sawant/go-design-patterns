@@ -10,6 +10,11 @@ import "fmt"
 // You can't plug it in directly.
 // You need an "Adapter" (a special connector) that changes your square plug into a round one.
 // Now you can charge your phone!
+//
+// Real World Scenario:
+// Integrating a legacy system with a modern one.
+// The new system expects data in JSON format, but the old legacy system gives data in XML.
+// You create an "XMLtoJSONAdapter" so the new system can use the old data without crashing.
 
 // -- The "Client" (What we want to use) --
 type Computer interface {
@@ -52,7 +57,7 @@ func main() {
 	// 2. Trying to use a Windows Machine with a Square USB
 	fmt.Println("\nUser: I have a Windows Machine, but my cable is Square!")
 	windowsMachine := &WindowsMachine{}
-	
+
 	// We need an adapter!
 	adapter := &WindowsAdapter{
 		windowMachine: windowsMachine,

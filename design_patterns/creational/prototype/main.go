@@ -9,6 +9,11 @@ import "fmt"
 // If your friend wants the SAME robot, you don't have to draw it all over again from scratch.
 // You can just put your drawing in a photocopy machine and press "COPY"!
 // Now you have two robots!
+//
+// Real World Scenario:
+// Game development. Spawning hordes of enemies (e.g., "Goblins"). Instead of creating a new
+// Goblin object from scratch (loading textures, sounds, stats) every single time, you create one
+// "Master Goblin" and just "clone" it 100 times, maybe tweaking their position or HP slightly.
 
 // Robot is our prototype interface.
 type Robot interface {

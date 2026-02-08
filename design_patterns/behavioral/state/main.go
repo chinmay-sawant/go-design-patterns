@@ -10,6 +10,12 @@ import "fmt"
 // When it is GREEN, cars GO.
 // When it is RED, cars STOP.
 // The light behaves DIFFERENTLY depending on what color (State) it is right now.
+//
+// Real World Scenario:
+// A Document Workflow (Draft -> Moderation -> Published).
+// When in "Draft" state, you can edit it.
+// When in "Moderation", you can't edit it, only Approve or Reject.
+// When "Published", it is public. The document behaves differently based on its current state.
 
 type State interface {
 	Next(light *TrafficLight)

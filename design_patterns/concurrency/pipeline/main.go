@@ -13,6 +13,13 @@ import "fmt"
 // Step 4: Someone puts a cherry on top (Stage 3).
 // The cake moves from person to person.
 // While the Baker is baking Cake #1, the Generator is already preparing Cake #2!
+//
+// Real World Scenario:
+// Data Processing ETL (Extract, Transform, Load).
+// Stage 1: Read lines from a huge log file (Extract).
+// Stage 2: Parse the JSON and filter errors (Transform).
+// Stage 3: Write the errors to a database (Load).
+// Each stage runs in parallel, passing data to the next stage instantly.
 
 // 1. Generator: Converts a list of numbers into a channel
 func Generator(nums ...int) <-chan int {

@@ -10,6 +10,11 @@ import "fmt"
 // OR you can have ANOTHER box inside it, which has more toys!
 // Whether you look at a single toy or a whole box of toys, you can treat them the same way: "Count the price" or "Weight it".
 // You don't care if it's one item or a box of items.
+//
+// Real World Scenario:
+// A Graphic Design App. You can group shapes (Circle, Square) into a "Group".
+// You can then move, resize, or color the "Group" just like you would a single shape.
+// The "Group" COMPOSES multiple shapes but treats them as one unit.
 
 type Component interface {
 	Search(keyword string)

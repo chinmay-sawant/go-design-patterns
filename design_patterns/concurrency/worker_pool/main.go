@@ -14,6 +14,12 @@ import (
 // You stand there and point: "You move this brick! You move that brick!"
 // The workers grab bricks from the pile as fast as they can until the pile is gone.
 // 3 people working is much faster than 1!
+//
+// Real World Scenario:
+// Handling HTTP Requests. A web server receives 10,000 requests per second.
+// Creating 10,000 threads would kill the server (Out of Memory).
+// Instead, you have a "Worker Pool" of 50 workers.
+// The requests go into a queue, and the 50 workers pick them up one by one.
 
 // Worker is a person who does the job.
 func Worker(id int, jobs <-chan int, results chan<- int) {

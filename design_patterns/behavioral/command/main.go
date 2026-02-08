@@ -11,6 +11,11 @@ import "fmt"
 // Another button knows how to "Mute Volume".
 // You (the Invoker) just press the button. You don't need to know how the TV works inside.
 // You can also "Undo" if you pressed the wrong button!
+//
+// Real World Scenario:
+// A Text Editor (like Word or VS Code). Every time you type a letter, delete a word, or bold text,
+// that action is a "Command" object. This is why you can press "Ctrl+Z" (Undo) to reverse the
+// last command, because the editor remembers the history of commands you executed.
 
 // Command interface
 type Command interface {

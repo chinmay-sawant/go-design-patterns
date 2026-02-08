@@ -11,6 +11,11 @@ import (
 // Imagine a country can only have ONE President.
 // No matter how many people ask "Who is the President?", they should all get the SAME answer.
 // You can't have two Presidents at the same time!
+//
+// Real World Scenario:
+// Database connection pool or a Logger service. You typically only want ONE database connection
+// pool for your entire application to manage resources efficiently. If every part of your code
+// created its own connection pool, you'd crash the database.
 
 // president is our private struct. No one can make a new one directly.
 type president struct {

@@ -11,6 +11,11 @@ import "fmt"
 // The Guard asks: "What is the password?"
 // If you know the password, the Guard lets you in (Accesses the Real Object).
 // If you don't know it, the Guard says "STOP! Go away!"
+//
+// Real World Scenario:
+// A Cache Proxy or Access Control.
+// - Cache: Before asking the real database (which is slow), check if we already have the answer in memory (fast).
+// - Access Control: Before letting a user delete a file, check if they are an Admin.
 
 type Door interface {
 	Open(password string)

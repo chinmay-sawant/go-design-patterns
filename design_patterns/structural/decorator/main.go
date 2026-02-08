@@ -12,6 +12,12 @@ import "fmt"
 // You can add chocolate sauce.
 // You can add a cherry.
 // It's still an Ice Cream, but now it's YUMMIER!
+//
+// Real World Scenario:
+// Middleware in Web Servers (like adding Logging, Authentication, or Gzip compression).
+// You have a basic "Handler" that serves the page.
+// You "decorate" it with a Logger. Then you decorate THAT with an Authenticator.
+// The request goes through all the layers (decorators) before reaching the final handler.
 
 type IceCream interface {
 	GetCost() int

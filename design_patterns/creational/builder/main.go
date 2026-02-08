@@ -12,6 +12,11 @@ import "fmt"
 // 2. Then, you add a roof.
 // 3. Maybe you add a moat (water) around it.
 // The Builder lets you choose exactly what parts you want!
+//
+// Real World Scenario:
+// Constructing a complex SQL query or a customized HTTP request. You start with a base request
+// and then optionally add headers, a body, query parameters, or timeouts step-by-step before
+// finally "building" and sending the request.
 
 // Castle is the complex object we are building.
 type Castle struct {

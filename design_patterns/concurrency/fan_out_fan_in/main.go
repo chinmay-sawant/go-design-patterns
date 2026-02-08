@@ -14,6 +14,11 @@ import (
 //
 // Fan-In (Collecting): When they are done, they all put the wrapped candy back into ONE big bowl.
 // You collect everything from everyone into one place (Fan-In).
+//
+// Real World Scenario:
+// Image Processing. You have 1000 images to resize.
+// Fan-Out: You spin up 10 workers, each taking 100 images to resize in parallel.
+// Fan-In: As they finish, they all send the resized images to a single channel to be zipped into a file.
 
 // Worker: Wraps the candy (Multiplies number by 10)
 func CandyWrapper(id int, input <-chan int) <-chan int {

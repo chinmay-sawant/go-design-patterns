@@ -14,22 +14,34 @@ import "fmt"
 // That's too many buttons!
 // A "Facade" is like a magical single button that says "PLAY GAME".
 // You press it, and it does ALL those things for you automatically.
+//
+// Real World Scenario:
+// A "One-Click Checkout" button.
+// Behind the scenes, it:
+// 1. Checks inventory.
+// 2. Verifies payment.
+// 3. Calculates shipping.
+// 4. Sends confirmation email.
+// The user sees ONE simple action, but the Facade handles the complex mess behind it.
 
 // -- Complex Subsystem Parts --
 
 type TV struct{}
-func (t *TV) On() { fmt.Println("TV: Turning ON") }
+
+func (t *TV) On()  { fmt.Println("TV: Turning ON") }
 func (t *TV) Off() { fmt.Println("TV: Turning OFF") }
 
 type SoundSystem struct{}
-func (s *SoundSystem) On() { fmt.Println("Sound: Turning ON") }
+
+func (s *SoundSystem) On()               { fmt.Println("Sound: Turning ON") }
 func (s *SoundSystem) SetVolume(vol int) { fmt.Printf("Sound: Volume set to %d\n", vol) }
-func (s *SoundSystem) Off() { fmt.Println("Sound: Turning OFF") }
+func (s *SoundSystem) Off()              { fmt.Println("Sound: Turning OFF") }
 
 type GameConsole struct{}
-func (g *GameConsole) On() { fmt.Println("Console: Turning ON") }
+
+func (g *GameConsole) On()        { fmt.Println("Console: Turning ON") }
 func (g *GameConsole) StartGame() { fmt.Println("Console: Starting the game...") }
-func (g *GameConsole) Off() { fmt.Println("Console: Turning OFF") }
+func (g *GameConsole) Off()       { fmt.Println("Console: Turning OFF") }
 
 // -- The Facade --
 
@@ -71,7 +83,7 @@ func main() {
 	fmt.Println("--- Facade Pattern: The Master Button ---")
 
 	facade := NewGameFacade()
-	
+
 	// Start everything with one call
 	facade.PlayGame()
 

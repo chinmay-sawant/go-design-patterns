@@ -10,6 +10,11 @@ import "fmt"
 // 2. You ask Dad. He has $50. He says "I can't afford it, ask Mom."
 // 3. You ask Mom. She has $200! She says "Ok, I'll buy it."
 // The request gets passed up the chain until someone can handle it!
+//
+// Real World Scenario:
+// IT Support Desk. You call Level 1 support. If they can't fix it, they escalate to Level 2.
+// If Level 2 can't fix it, they escalate to Level 3 (The Engineers).
+// The request moves up the chain until it finds someone who knows the answer.
 
 type Handler interface {
 	SetNext(handler Handler) Handler

@@ -10,6 +10,11 @@ import "fmt"
 // When a new paper is ready, he goes to EVERY house on his list and throws the paper.
 // If you want the paper, you put your name on the list (Subscribe).
 // If you don't want it anymore, you take your name off (Unsubscribe).
+//
+// Real World Scenario:
+// YouTube or Newsletter Subscriptions. When a YouTuber uploads a new video, YouTube "notifies"
+// all millions of subscribers with a notification. The YouTuber (Subject) doesn't need to know
+// who you are, just that you are in the list of people to notify.
 
 // Observer interface
 type Observer interface {

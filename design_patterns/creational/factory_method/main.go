@@ -8,6 +8,11 @@ import "fmt"
 // Imagine a magical Toy Factory. You don't need to know how to build a car or a doll.
 // You just go to the factory window and say "I want a car!" or "I want a doll!".
 // The factory hands you the toy, ready to play!
+//
+// Real World Scenario:
+// A payment processing system. You have a processPayment method, but based on the user's choice
+// (Credit Card, PayPal, Bitcoin), you need to create a specific PaymentProcessor object
+// (like CreditCardProcessor or PayPalProcessor) to handle the transaction.
 
 // Toy is something we can play with.
 type Toy interface {

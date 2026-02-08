@@ -10,6 +10,11 @@ import "fmt"
 // If you go to the "Modern Store", EVERY piece of furniture you buy (chair, sofa) matches the modern style.
 // If you go to the "Old-Fashioned Store", EVERYTHING matches the old style.
 // You don't mix and match by accident!
+//
+// Real World Scenario:
+// Building UI libraries where you need a "Dark Theme" factory and a "Light Theme" factory.
+// The "Dark Theme" factory creates dark buttons and dark windows, while the "Light Theme"
+// factory creates light buttons and windows. You never want to mix a dark button with a light window.
 
 // Chair interface
 type Chair interface {
@@ -23,16 +28,20 @@ type Sofa interface {
 
 // --- Modern Furniture ---
 type ModernChair struct{}
+
 func (m *ModernChair) Sit() { fmt.Println("Sitting on a cool Modern Chair.") }
 
 type ModernSofa struct{}
+
 func (m *ModernSofa) LieDown() { fmt.Println("Sleeping on a cool Modern Sofa.") }
 
 // --- Old-Fashioned (Victorian) Furniture ---
 type VictorianChair struct{}
+
 func (v *VictorianChair) Sit() { fmt.Println("Sitting on a fancy Victorian Chair.") }
 
 type VictorianSofa struct{}
+
 func (v *VictorianSofa) LieDown() { fmt.Println("Sleeping on a fancy Victorian Sofa.") }
 
 // --- The Factory Interface ---
@@ -46,11 +55,13 @@ type FurnitureFactory interface {
 
 // ModernFactory only makes Modern stuff
 type ModernFactory struct{}
+
 func (m *ModernFactory) CreateChair() Chair { return &ModernChair{} }
 func (m *ModernFactory) CreateSofa() Sofa   { return &ModernSofa{} }
 
 // VictorianFactory only makes Victorian stuff
 type VictorianFactory struct{}
+
 func (v *VictorianFactory) CreateChair() Chair { return &VictorianChair{} }
 func (v *VictorianFactory) CreateSofa() Sofa   { return &VictorianSofa{} }
 
